@@ -25,7 +25,7 @@ namespace Correlation
                     
                     var values = line.Split(','); // split columns via commas
 
-                    pm1.Add(values[2]);
+                    pm1.Add(values[2]);         // adds columns to lists, including headers
                     so1.Add(values[3]);
                     no1.Add(values[4]);
                     o1.Add(values[5]);
@@ -50,9 +50,9 @@ namespace Correlation
 
             }
 
-            pm1.RemoveAt(0);
-            target.RemoveAt(0);
+            simplify(pm1,so1, no1, o1, pm2, so2, no2, o2, pm3, so3, no3, o3, pm4, so4, no4, o4, target); // simplify Lists for correlation
 
+            
             List<double> myList = pm1.ConvertAll(item => double.Parse(item));
             List<double> myList2 = target.ConvertAll(item => double.Parse(item));
 
@@ -70,6 +70,29 @@ namespace Correlation
             Console.ReadKey();
 
            }
+
+        static void simplify(List<string> c, List<string> d, List<string> e, List<string> f, List<string> g, List<string> h, List<string> i, List<string> j, List<string> k, List<string> l, List<string> m, List<string> n, List<string> o, List<string> p, List<string> q, List<string> r, List<string> s)
+        {
+            c.RemoveAt(0);  // remove headers
+            d.RemoveAt(0);
+            e.RemoveAt(0);
+            f.RemoveAt(0);
+            g.RemoveAt(0);
+            h.RemoveAt(0);
+            i.RemoveAt(0);
+            j.RemoveAt(0);
+            k.RemoveAt(0);
+            l.RemoveAt(0);
+            m.RemoveAt(0);
+            n.RemoveAt(0);
+            o.RemoveAt(0);
+            p.RemoveAt(0);
+            q.RemoveAt(0);
+            r.RemoveAt(0);
+            s.RemoveAt(0);
         }
+
     }
+
+ }
 
